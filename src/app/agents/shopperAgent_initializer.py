@@ -16,6 +16,7 @@ with open(CORA_PROMPT_TARGET, 'r', encoding='utf-8') as file:
     CORA_PROMPT = file.read()
 
 project_endpoint = os.environ["AZURE_AI_AGENT_ENDPOINT"]
+agent_id=os.environ["cora"]
 
 project_client = AIProjectClient(
     endpoint=project_endpoint,

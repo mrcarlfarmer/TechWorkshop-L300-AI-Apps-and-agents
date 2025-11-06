@@ -18,6 +18,8 @@ with open(CL_PROMPT_TARGET, 'r', encoding='utf-8') as file:
     CL_PROMPT = file.read()
 
 project_endpoint= os.getenv("AZURE_AI_AGENT_ENDPOINT")
+agent_id = os.environ["customer_loyalty"]
+
 project_client = AIProjectClient(
     endpoint=project_endpoint,
     credential=DefaultAzureCredential(),

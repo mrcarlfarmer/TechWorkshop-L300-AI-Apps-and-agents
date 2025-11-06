@@ -18,6 +18,7 @@ with open(IA_PROMPT_TARGET, 'r', encoding='utf-8') as file:
     IA_PROMPT = file.read()
 
 project_endpoint = os.environ["AZURE_AI_AGENT_ENDPOINT"]
+agent_id=os.environ["inventory_agent"]
 
 project_client = AIProjectClient(
     endpoint=project_endpoint,

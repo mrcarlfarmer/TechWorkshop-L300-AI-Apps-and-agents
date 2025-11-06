@@ -14,6 +14,7 @@ with open(ID_PROMPT_TARGET, 'r', encoding='utf-8') as file:
     ID_PROMPT = file.read()
 
 project_endpoint = os.environ["AZURE_AI_AGENT_ENDPOINT"]
+agent_id=os.environ["interior_designer"]
 
 project_client = AIProjectClient(
     endpoint=project_endpoint,
