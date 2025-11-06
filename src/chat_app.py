@@ -2,6 +2,10 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 import os
 from dotenv import load_dotenv
+
+# make sure this is called as early as possible so env vars are loaded
+load_dotenv(override=True)
+
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
 from azure.ai.inference.models import SystemMessage, UserMessage
@@ -42,7 +46,6 @@ from services.agent_service import get_or_create_agent_processor
 from services.handoff_service import call_handoff, select_agent
 from services.fallback_service import call_fallback, cora_fallback
 
-load_dotenv(override=True)
 
 # Configure structured logging
 logging.basicConfig(
